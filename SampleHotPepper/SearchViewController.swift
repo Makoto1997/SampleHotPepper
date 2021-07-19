@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import MapKit
+import PKHUD
 
-class SearchViewController: UIViewController {
+final class SearchViewController: UIViewController {
     //この中でselfを呼べないのでlazyを使用しタイミングを遅らせる。
     lazy var searchBar: UISearchBar = {
        
@@ -50,5 +52,9 @@ extension SearchViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         searchBar.showsCancelButton = false
         //        api通信を呼ぶ
+        
+        let storyboard:UIStoryboard = UIStoryboard(name: "Restaurant", bundle: nil)
+        let restaurantViewController = storyboard.instantiateViewController(withIdentifier: "RestaurantViewController") as! RestaurantViewController
+        self.navigationController?.pushViewController(restaurantViewController, animated: true)
     }
 }
