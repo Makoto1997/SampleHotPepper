@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,11 @@
 		0E06FC0426A58B2E004E34E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E06FC0226A58B2E004E34E1 /* LaunchScreen.storyboard */; };
 		0E06FC0C26A5EC07004E34E1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E06FC0B26A5EC07004E34E1 /* SearchViewController.swift */; };
 		0E06FC0E26A5EC21004E34E1 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E06FC0D26A5EC21004E34E1 /* Search.storyboard */; };
+		0E06FC1026A5F6CF004E34E1 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E06FC0F26A5F6CF004E34E1 /* RestaurantViewController.swift */; };
+		0E06FC1226A5F777004E34E1 /* Restaurant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E06FC1126A5F777004E34E1 /* Restaurant.storyboard */; };
+		0E06FC1526A5FC17004E34E1 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0E06FC1426A5FC17004E34E1 /* SDWebImage */; };
+		0E06FC1726A5FC17004E34E1 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0E06FC1626A5FC17004E34E1 /* SDWebImageMapKit */; };
+		0E06FC1A26A5FC4D004E34E1 /* PKHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 0E06FC1926A5FC4D004E34E1 /* PKHUD */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,8 @@
 		0E06FC0526A58B2E004E34E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E06FC0B26A5EC07004E34E1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0E06FC0D26A5EC21004E34E1 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		0E06FC0F26A5F6CF004E34E1 /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
+		0E06FC1126A5F777004E34E1 /* Restaurant.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Restaurant.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E06FC1A26A5FC4D004E34E1 /* PKHUD in Frameworks */,
+				0E06FC1726A5FC17004E34E1 /* SDWebImageMapKit in Frameworks */,
+				0E06FC1526A5FC17004E34E1 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +70,8 @@
 				0E06FBF926A58B2D004E34E1 /* SceneDelegate.swift */,
 				0E06FC0B26A5EC07004E34E1 /* SearchViewController.swift */,
 				0E06FC0D26A5EC21004E34E1 /* Search.storyboard */,
+				0E06FC0F26A5F6CF004E34E1 /* RestaurantViewController.swift */,
+				0E06FC1126A5F777004E34E1 /* Restaurant.storyboard */,
 				0E06FC0026A58B2E004E34E1 /* Assets.xcassets */,
 				0E06FC0226A58B2E004E34E1 /* LaunchScreen.storyboard */,
 				0E06FC0526A58B2E004E34E1 /* Info.plist */,
@@ -83,6 +95,11 @@
 			dependencies = (
 			);
 			name = SampleHotPepper;
+			packageProductDependencies = (
+				0E06FC1426A5FC17004E34E1 /* SDWebImage */,
+				0E06FC1626A5FC17004E34E1 /* SDWebImageMapKit */,
+				0E06FC1926A5FC4D004E34E1 /* PKHUD */,
+			);
 			productName = SampleHotPepper;
 			productReference = 0E06FBF426A58B2D004E34E1 /* SampleHotPepper.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +127,10 @@
 				Base,
 			);
 			mainGroup = 0E06FBEB26A58B2D004E34E1;
+			packageReferences = (
+				0E06FC1326A5FC17004E34E1 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				0E06FC1826A5FC4D004E34E1 /* XCRemoteSwiftPackageReference "PKHUD" */,
+			);
 			productRefGroup = 0E06FBF526A58B2D004E34E1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E06FC0426A58B2E004E34E1 /* LaunchScreen.storyboard in Resources */,
+				0E06FC1226A5F777004E34E1 /* Restaurant.storyboard in Resources */,
 				0E06FC0E26A5EC21004E34E1 /* Search.storyboard in Resources */,
 				0E06FC0126A58B2E004E34E1 /* Assets.xcassets in Resources */,
 			);
@@ -140,6 +162,7 @@
 				0E06FC0C26A5EC07004E34E1 /* SearchViewController.swift in Sources */,
 				0E06FBF826A58B2D004E34E1 /* AppDelegate.swift in Sources */,
 				0E06FBFA26A58B2D004E34E1 /* SceneDelegate.swift in Sources */,
+				0E06FC1026A5F6CF004E34E1 /* RestaurantViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +356,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0E06FC1326A5FC17004E34E1 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.11.1;
+			};
+		};
+		0E06FC1826A5FC4D004E34E1 /* XCRemoteSwiftPackageReference "PKHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pkluz/PKHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0E06FC1426A5FC17004E34E1 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E06FC1326A5FC17004E34E1 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		0E06FC1626A5FC17004E34E1 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E06FC1326A5FC17004E34E1 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+		0E06FC1926A5FC4D004E34E1 /* PKHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E06FC1826A5FC4D004E34E1 /* XCRemoteSwiftPackageReference "PKHUD" */;
+			productName = PKHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0E06FBEC26A58B2D004E34E1 /* Project object */;
 }
