@@ -18,6 +18,8 @@
 		0E06FC1526A5FC17004E34E1 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0E06FC1426A5FC17004E34E1 /* SDWebImage */; };
 		0E06FC1726A5FC17004E34E1 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0E06FC1626A5FC17004E34E1 /* SDWebImageMapKit */; };
 		0E06FC1A26A5FC4D004E34E1 /* PKHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 0E06FC1926A5FC4D004E34E1 /* PKHUD */; };
+		0E06FC1D26A7D897004E34E1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0E06FC1C26A7D897004E34E1 /* Alamofire */; };
+		0E06FC2026A7D8C5004E34E1 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 0E06FC1F26A7D8C5004E34E1 /* SwiftyJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +41,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E06FC1A26A5FC4D004E34E1 /* PKHUD in Frameworks */,
+				0E06FC1D26A7D897004E34E1 /* Alamofire in Frameworks */,
 				0E06FC1726A5FC17004E34E1 /* SDWebImageMapKit in Frameworks */,
+				0E06FC2026A7D8C5004E34E1 /* SwiftyJSON in Frameworks */,
 				0E06FC1526A5FC17004E34E1 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +103,8 @@
 				0E06FC1426A5FC17004E34E1 /* SDWebImage */,
 				0E06FC1626A5FC17004E34E1 /* SDWebImageMapKit */,
 				0E06FC1926A5FC4D004E34E1 /* PKHUD */,
+				0E06FC1C26A7D897004E34E1 /* Alamofire */,
+				0E06FC1F26A7D8C5004E34E1 /* SwiftyJSON */,
 			);
 			productName = SampleHotPepper;
 			productReference = 0E06FBF426A58B2D004E34E1 /* SampleHotPepper.app */;
@@ -130,6 +136,8 @@
 			packageReferences = (
 				0E06FC1326A5FC17004E34E1 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				0E06FC1826A5FC4D004E34E1 /* XCRemoteSwiftPackageReference "PKHUD" */,
+				0E06FC1B26A7D897004E34E1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				0E06FC1E26A7D8C5004E34E1 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 0E06FBF526A58B2D004E34E1 /* Products */;
 			projectDirPath = "";
@@ -374,6 +382,22 @@
 				minimumVersion = 5.4.0;
 			};
 		};
+		0E06FC1B26A7D897004E34E1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+		0E06FC1E26A7D8C5004E34E1 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -391,6 +415,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0E06FC1826A5FC4D004E34E1 /* XCRemoteSwiftPackageReference "PKHUD" */;
 			productName = PKHUD;
+		};
+		0E06FC1C26A7D897004E34E1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E06FC1B26A7D897004E34E1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		0E06FC1F26A7D8C5004E34E1 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E06FC1E26A7D8C5004E34E1 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
