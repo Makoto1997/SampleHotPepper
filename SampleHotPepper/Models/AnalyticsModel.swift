@@ -14,7 +14,7 @@ class AnalyticsModel {
     var latitudeValue: Double?
     var longitudeValue: Double?
     var urlString: String?
-    var restaurantDataArray = [RestaurantData]()
+    var shopDataArray = [ShopData]()
     
     init(latitube: Double, longitube: Double, url: String) {
         
@@ -44,10 +44,10 @@ class AnalyticsModel {
                         
                         if json["rest"][i]["latitube"] != "" && json["rest"][i]["longitube"] != "" && json["rest"][i]["url"] != "" && json["rest"][i]["name"] != "" && json["rest"][i]["image_url"]["shop_image1"] != "" {
                             
-                            let restaurantData = RestaurantData(latitube: json["rest"][i]["latitube"].string, longitube: json["rest"][i]["longitube"].string, url: json["rest"][i]["url"].string, name: json["rest"][i]["name"].string, tel: json["rest"][i]["tel"].string, image: json["rest"][i]["image_url"]["shop_image1"].string)
+                            let shopData = ShopData(latitube: json["rest"][i]["latitube"].string, longitube: json["rest"][i]["longitube"].string, url: json["rest"][i]["url"].string, name: json["rest"][i]["name"].string, tel: json["rest"][i]["tel"].string, image: json["rest"][i]["image_url"]["shop_image1"].string)
                             
-                            self.restaurantDataArray.append(restaurantData)
-                            print(self.restaurantDataArray.debugDescription)
+                            self.shopDataArray.append(shopData)
+                            print(self.shopDataArray.debugDescription)
                         } else {
                             print("空のものがあります。")
                         }

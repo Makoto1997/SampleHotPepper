@@ -1,5 +1,5 @@
 //
-//  RestaurantViewController.swift
+//  DetailViewController.swift
 //  SampleHotPepper
 //
 //  Created by Makoto on 2021/07/20.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class RestaurantViewController: UIViewController {
+final class DetailViewController: UIViewController {
     
     @IBOutlet weak var restaurantImageView: UIImageView!
     @IBOutlet weak var callButton: UIButton!

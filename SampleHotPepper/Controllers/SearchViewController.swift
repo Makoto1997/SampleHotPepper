@@ -139,8 +139,8 @@ extension SearchViewController: UISearchBarDelegate {
         let urlString = "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(apikey)&latitude=\(latitudeValue)&longitude=\(longitudeValue)&range=3&hit_per_page=50&freeword=\(searchBar.text!)"
         let analyticsModel = AnalyticsModel(latitube: latitudeValue, longitube: longitudeValue, url: urlString)
         HUD.hide()
-        let storyboard:UIStoryboard = UIStoryboard(name: "Restaurant", bundle: nil)
-        let restaurantViewController = storyboard.instantiateViewController(withIdentifier: "RestaurantViewController") as! RestaurantViewController
-        self.navigationController?.pushViewController(restaurantViewController, animated: true)
+        let storyboard:UIStoryboard = UIStoryboard(name: "Detail", bundle: nil)
+        let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
