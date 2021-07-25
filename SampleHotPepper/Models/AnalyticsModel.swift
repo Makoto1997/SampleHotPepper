@@ -9,12 +9,18 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+protocol DoneCatchDataProtocol {
+    
+    func catchData(arrayData:Array<ShopData>, resultCount:Int)
+}
+
 class AnalyticsModel {
     
     var latitudeValue: Double?
     var longitudeValue: Double?
     var urlString: String?
     var shopDataArray = [ShopData]()
+    var doneCatchDataProtocol: DoneCatchDataProtocol?
     
     init(latitube: Double, longitube: Double, url: String) {
         
@@ -52,6 +58,8 @@ class AnalyticsModel {
                             print("空のものがあります。")
                         }
                     }
+                    
+                    self.doneCatchDataProtocol?.catchData(arrayData: self.shopDataArray, resultCount: self.shopDataArray.count)
                 } catch {
                     print("エラーです。")
                 }

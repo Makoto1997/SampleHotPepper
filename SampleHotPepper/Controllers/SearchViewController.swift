@@ -17,6 +17,9 @@ final class SearchViewController: UIViewController {
     var latitudeValue = Double()
     var longitudeValue = Double()
     var apikey = "c8df44b0aa6625f6"
+    
+    var shopDataArray = [ShopData]()
+    var totalHitCount = Int()
     //この中でselfを呼べないのでlazyを使用しタイミングを遅らせる。
     lazy var searchBar: UISearchBar = {
         
@@ -136,11 +139,24 @@ extension SearchViewController: UISearchBarDelegate {
         searchBar.showsCancelButton = false
         HUD.show(.progress)
         //        api通信を呼ぶ
-        let urlString = "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(apikey)&latitude=\(latitudeValue)&longitude=\(longitudeValue)&range=3&hit_per_page=50&freeword=\(searchBar.text!)"
+        let urlString = "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(apikey)&latitude=\(latitudeValue)&longitude=\(longitudeValue)&range=3&hit_per_page=50&freeword=\(searchBar.text!)"
         let analyticsModel = AnalyticsModel(latitube: latitudeValue, longitube: longitudeValue, url: urlString)
-        HUD.hide()
+        
+        analyticsModel.doneCatchDataProtocol = self
+        analyticsModel.setData()
+        
         let storyboard:UIStoryboard = UIStoryboard(name: "Detail", bundle: nil)
         let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         self.navigationController?.pushViewController(detailViewController, animated: true)
+    }
+}
+
+extension SearchViewController: DoneCatchDataProtocol {
+    
+    func catchData(arrayData: Array<ShopData>, resultCount: Int) {
+        
+        HUD.hide()
+        shopDataArray = arrayData
+        totalHitCount = resultCount
     }
 }
