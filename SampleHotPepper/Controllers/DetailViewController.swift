@@ -6,16 +6,27 @@
 //
 
 import UIKit
+import WebKit
+import SDWebImage
 
 final class DetailViewController: UIViewController {
     
-    @IBOutlet weak var restaurantImageView: UIImageView!
+    @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet weak var callButton: UIButton!
+    @IBOutlet weak var webView: WKWebView!
+    
+    var url = String()
+    var imageURLSting = String()
+    var name = String()
+    var tel = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ImageView.sd_setImage(with: URL(string: imageURLSting), completed: nil)
         
+        let request = URLRequest(url: URL(string: url)!)
+        webView.load(request)
     }
     
     private func setUpViews() {
@@ -29,5 +40,6 @@ final class DetailViewController: UIViewController {
     
     @IBAction func call(_ sender: Any) {
         
+        UIApplication.shared.open(URL(string: "//\(tel)")!, options: [:], completionHandler: nil)
     }
 }

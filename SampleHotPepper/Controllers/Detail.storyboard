@@ -57,8 +57,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ImageView" destination="aw7-EY-gtl" id="bP8-re-LQj"/>
                         <outlet property="callButton" destination="C8n-qu-rEA" id="76T-wP-9OD"/>
-                        <outlet property="restaurantImageView" destination="aw7-EY-gtl" id="K6Q-nP-QNC"/>
+                        <outlet property="webView" destination="v5G-8B-cnK" id="TdO-V9-Wwl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
