@@ -20,6 +20,12 @@ final class SearchViewController: UIViewController {
     
     var shopDataArray = [ShopData]()
     var totalHitCount = Int()
+    var urlArray = [String]()
+    var imageStringArray = [String]()
+    var nameStringArray = [String]()
+    var telArray = [String]()
+    var annotation = MKPointAnnotation()
+    var indexNumber = Int()
     //この中でselfを呼べないのでlazyを使用しタイミングを遅らせる。
     lazy var searchBar: UISearchBar = {
         
@@ -65,6 +71,34 @@ final class SearchViewController: UIViewController {
     //        }
     //        //現在地取得開始。
     //        locationManager.startUpdatingLocation()
+    
+    func addAnnotation(shopData:[ShopData]) {
+        
+        removeArray()
+        for i in 0...totalHitCount - 1 {
+            print(i)
+            annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(shopDataArray[i].latitube!)!, CLLocationDegrees(shopDataArray[i].longitube!)!)
+            //タイトル、サブタイトル
+            annotation.title = shopData[i].name
+            annotation.subtitle = shopData[i].tel
+            urlArray.append(shopData[i].url!)
+            imageStringArray.append(shopData[i].image!)
+            nameStringArray.append(shopData[i].name!)
+            telArray.append(shopData[i].tel!)
+            mapView.addAnnotation(annotation)
+        }
+    }
+    
+    func removeArray() {
+        //ピンを削除する。
+        mapView.removeAnnotation(mapView.annotations as! MKAnnotation)
+        
+        urlArray = []
+        imageStringArray = []
+        nameStringArray = []
+        telArray = []
+    }
 }
 
 extension SearchViewController: CLLocationManagerDelegate, MKMapViewDelegate {
@@ -118,6 +152,26 @@ extension SearchViewController: CLLocationManagerDelegate, MKMapViewDelegate {
             print("This should not happen!")
         }
     }
+    //ピンをタップした時に呼ばれる。
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        //情報をもとに画面遷移。
+        indexNumber = Int()
+        //何番目か。
+        if nameStringArray.firstIndex(of: (view.annotation?.title)!!) != nil {
+            
+            print(indexNumber)
+            let storyboard:UIStoryboard = UIStoryboard(name: "Detail", bundle: nil)
+            let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+            detailViewController.url = urlArray[indexNumber]
+            detailViewController.imageURLSting = imageStringArray[indexNumber]
+            detailViewController.name = nameStringArray[indexNumber]
+            detailViewController.tel = telArray[indexNumber]
+            
+            
+            self.navigationController?.pushViewController(detailViewController, animated: true)
+        }
+    }
 }
 
 extension SearchViewController: UISearchBarDelegate {
@@ -144,10 +198,6 @@ extension SearchViewController: UISearchBarDelegate {
         
         analyticsModel.doneCatchDataProtocol = self
         analyticsModel.setData()
-        
-        let storyboard:UIStoryboard = UIStoryboard(name: "Detail", bundle: nil)
-        let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
 
@@ -158,5 +208,7 @@ extension SearchViewController: DoneCatchDataProtocol {
         HUD.hide()
         shopDataArray = arrayData
         totalHitCount = resultCount
+        
+        addAnnotation(shopData: shopDataArray)
     }
 }
